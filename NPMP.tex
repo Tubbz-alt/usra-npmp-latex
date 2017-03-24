@@ -1,0 +1,70 @@
+\documentclass[final,letterpaper,oneside,12pt]{article}
+\usepackage[npmp]{nasapostdoc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[plainpages=false,colorlinks=true,urlcolor=black,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+
+\title{Replace this with Your Title}  % add title here
+\author{Your Name Goes Here}  % include Author's name here
+
+%%% Uncomment the lines below and replace the text with your information
+%\project{Replace this with the selected opportunity title from the USRA website} 
+%\institution{Replace this with the prospective NASA center}  
+%\advisor{Replace this with the advisor of the selected opportunity} 
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	Replace this text with the text of your abstract.
+\end{abstract}
+
+This is an example using the \LaTeX{} template for the NASA Postdoctoral Management Program (NPMP).  Provide a summary of your goals for a possible appointment to the program.
+
+The \href{http://merkel.texture.rocks/Latex/natbib.php}{natbib} package provides multiple citation options as described in \citet{natbib:2010}.
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=1in]{example-image-a}
+   \caption{example caption}
+   \label{fig:example}
+\end{figure}
+
+\section{Background}
+
+Discuss your prior management experience and background, including your previous knowledge, skills and abilities.
+
+\section{Relevance of your NPP experience to the Management Program}
+
+Describe how your experience as a NASA Postdoctoral Program Research Fellow is relevant and helpful to appointment in the Management Program.
+
+\section{Expected Contributions}
+
+Discuss the contributions you expect to make as part of the NASA Postdoctoral Management Program in general and in your chosen opportunity in particular.
+
+\section{ Methods and Innovations}
+
+Discuss the methods you will use to achieve your goals, and discuss in what way these methods may be new or innovative.
+
+
+\section{Career Goals Beyond the Management Program}
+
+Discuss how your participation in the Management Program will help you achieve your career goals.
+
+
+%%% Include literature citations where necessary and appropriate.
+%%% You should use an accepted citation format relevant for your field
+%%% Citations can be single-spaced, but should use a 12 point font.
+\newpage
+\singlespacing
+\setlength{\bibsep}{0ex}
+\bibliographystyle{abbrvnat}
+\bibliography{nasa-bib-npmp}
+
+\end{document}  
+%%% Local Variables: ***
+%%% mode: latex ***
+%%% TeX-master: "NPMP.tex" ***
+%%% End: ***

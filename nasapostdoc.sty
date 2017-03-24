@@ -1,0 +1,52 @@
+% Package defines typesetting for NASA Postdoctoral Program Proposals
+\ProvidesPackage{nasapostdoc}[2016/10/20 v.01]
+\PassOptionsToPackage{hmargin={1in,1in},vmargin={1in,1in}}{geometry}
+\RequirePackage{geometry}
+\RequirePackage{indentfirst}
+\RequirePackage{setspace}
+\RequirePackage{titlesec}
+\RequirePackage{abstract}
+\RequirePackage{caption}
+
+%-- Caption label with bold font
+\captionsetup{labelfont=bf}
+
+%-- Declare options and use default options
+\newif\ifnpmp
+\DeclareOption{npmp}{\global\npmptrue}
+\ExecuteOptions{}
+\ProcessOptions
+
+%-- section and subsection formats
+\renewcommand{\abstractnamefont}{\fontsize{14}{14}\selectfont\bfseries}
+\titleformat*{\section}{\fontsize{14}{14}\selectfont\bfseries}
+\titleformat*{\subsection}{\fontsize{14}{14}\selectfont\bfseries}
+\titlespacing*{\section}{0pt}{0.5\baselineskip}{0.3\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.3\baselineskip}
+%-- Double Spaced (no more than 15 pages with references and figures)
+\doublespacing
+
+%-- defaults for NPP title
+\newcommand*{\project}[1]{\gdef\@project{#1}}
+\newcommand*{\@project}{ENTER RESEARCH OPPORTUNITY TITLE}
+\newcommand*{\institution}[1]{\gdef\@institution{#1}}
+\newcommand*{\@institution}{ENTER NASA CENTER NAME}
+\newcommand*{\advisor}[1]{\gdef\@advisor{#1}}
+\newcommand*{\@advisor}{ENTER ADVISOR NAME}
+
+%-- title setup
+\renewcommand*{\maketitle}{
+\makeatletter
+\begingroup  
+  {\centering\fontsize{16}{16}\selectfont\bfseries \@title\\[0.75ex]}
+  {\centering\fontsize{14}{14}\selectfont \@author\\[0.75ex]}
+  \ifnpmp
+    {\centering\textbf{An Application to the NASA Postdoctoral Management Program\\[0.75ex]}}
+  \fi  
+  \noindent\textbf{Title of Research Opportunity}: \@project\par
+  \noindent\textbf{NASA Center}: \@institution\par
+  \noindent\textbf{NASA Advisor}: \@advisor\par
+\endgroup
+\makeatother
+}
+\endinput
